@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package gradecalculator2;
+package stuGradeCalc;
 
 import javax.swing.JOptionPane;
 
@@ -55,6 +55,7 @@ public class calculatorUI extends javax.swing.JFrame {
         LPhys = new javax.swing.JLabel();
         PhysRes = new javax.swing.JTextField();
         btnReset = new javax.swing.JButton();
+        Value = new javax.swing.JButton();
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel8.setText("Student Number:");
@@ -158,6 +159,15 @@ public class calculatorUI extends javax.swing.JFrame {
             }
         });
 
+        Value.setBackground(new java.awt.Color(255, 153, 153));
+        Value.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Value.setText("Enter a Value");
+        Value.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ValueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,7 +206,9 @@ public class calculatorUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(202, 202, 202)
                         .addComponent(jLabel1)))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Value, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,8 +218,10 @@ public class calculatorUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Value, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LStdntNum)
                     .addComponent(etStdntNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -250,7 +264,7 @@ public class calculatorUI extends javax.swing.JFrame {
                     .addComponent(LGrade)
                     .addComponent(etGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReset))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
@@ -342,6 +356,11 @@ public class calculatorUI extends javax.swing.JFrame {
         etTotMrks.setText(" ");
     }//GEN-LAST:event_btnResetActionPerformed
 
+    private void ValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValueActionPerformed
+        String value = JOptionPane.showInputDialog("Enter a value");
+        JOptionPane.showMessageDialog(null, "Your value was: '" + value + "'.");
+    }//GEN-LAST:event_ValueActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -393,6 +412,7 @@ public class calculatorUI extends javax.swing.JFrame {
     private javax.swing.JLabel LTotMrks;
     private javax.swing.JTextField MathRes;
     private javax.swing.JTextField PhysRes;
+    private javax.swing.JButton Value;
     private javax.swing.JButton btnCalc;
     private javax.swing.JButton btnReset;
     private javax.swing.JTextField etGrade;
